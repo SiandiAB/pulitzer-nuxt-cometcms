@@ -1,6 +1,8 @@
 [build]
   command = "npm run generate"
-  publish = ".output/public"
+  # En Netlify, Nuxt detecta el entorno y usa el preset "netlify-static",
+  # que genera el sitio en "dist" (localmente genera en .output/public).
+  publish = "dist"
 
 [build.environment]
   # Nuxt 4.5 / Nitro 2.13 chocan con un bug de Node 24 en la resolución de

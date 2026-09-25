@@ -181,7 +181,7 @@ pulitzer-nuxt/
 │   └── favicon.svg
 ├── nuxt.config.ts                 # runtimeConfig con las credenciales de CometCMS
 ├── .env.example
-├── netlify.toml                   # fija el build (npm run generate → .output/public)
+├── netlify.toml                   # fija el build (npm run generate → dist, preset netlify-static)
 ├── package.json
 └── package-lock.json
 ```
@@ -212,7 +212,9 @@ decidir cuándo se refleja un cambio publicado en el CMS:
 - `npm run generate` (usado por `netlify.toml`): pre-renderiza el sitio en
   el momento del build — más rápido de servir, pero para reflejar cambios
   del CMS hay que volver a compilar (por ejemplo disparando un rebuild en
-  Netlify desde un *webhook* de CometCMS).
+  Netlify desde un *webhook* de CometCMS). En Netlify el preset es
+  `netlify-static` y el sitio se genera en `dist/` (localmente en
+  `.output/public`), por eso `netlify.toml` publica `dist`.
 - `npm run build`: renderiza cada página en cada petición a través de las
   rutas de servidor de Nitro — siempre al día, a costa de una respuesta
   algo más lenta. Requiere cambiar el `publish`/adaptador de Netlify para
