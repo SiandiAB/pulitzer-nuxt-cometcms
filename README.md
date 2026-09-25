@@ -1,6 +1,6 @@
 # Premios Pulitzer — Explorador de datos (Nuxt + CometCMS)
 
-**Sitio publicado:** https://pulitzer-prizes-nuxt.netlify.app _(actualizar el enlace tras volver a publicar con el contenido de CometCMS)_
+**Sitio publicado:** https://pulitzer-prizes-nuxt.netlify.app
 
 **Proyecto 1 / Tarea 3** — EIF-511 Arquitectura de Información
 **Estudiante:** Siandi Araya Bello — 118870991
