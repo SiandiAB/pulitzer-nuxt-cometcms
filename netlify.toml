@@ -1,0 +1,9 @@
+[build]
+  command = "npm run generate"
+  publish = ".output/public"
+
+[build.environment]
+  # Nuxt 4.5 / Nitro 2.13 chocan con un bug de Node 24 en la resolución de
+  # @rollup/pluginutils (ERR_REQUIRE_CYCLE_MODULE). Se fija Node 22 LTS hasta
+  # que haya un parche upstream.
+  NODE_VERSION = "22"

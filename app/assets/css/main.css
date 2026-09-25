@@ -1,0 +1,635 @@
+/* app/assets/css/main.css
+   Hoja de estilos propia del sitio "Premios Pulitzer" (sin frameworks CSS
+   externos), importada desde nuxt.config.ts mediante la propiedad css. */
+
+:root {
+  --color-bg: #faf8f3;
+  --color-surface: #ffffff;
+  --color-ink: #221d13;
+  --color-ink-soft: #5b5342;
+  --color-navy: #14213d;
+  --color-navy-soft: #22315a;
+  --color-gold: #b8862e;
+  --color-gold-light: #e9c876;
+  --color-border: #e6ddc8;
+  --color-teatro: #7a3b3b;
+  --radius: 10px;
+  --max-width: 1080px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: 'Georgia', 'Iowan Old Style', 'Palatino Linotype', serif;
+  line-height: 1.55;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
+  color: var(--color-navy);
+  line-height: 1.2;
+}
+
+a {
+  color: var(--color-navy);
+}
+
+a:hover {
+  color: var(--color-gold);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* ---------- Encabezado ---------- */
+
+.site-header {
+  background: var(--color-navy);
+  color: #fff;
+  border-bottom: 3px solid var(--color-gold);
+}
+
+.site-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 0.9rem 1.25rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: #fff;
+  text-decoration: none;
+}
+
+.brand-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--color-gold-light);
+  flex-shrink: 0;
+}
+
+.main-nav {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  color: #f1ecdd;
+  text-decoration: none;
+  font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
+  font-size: 0.95rem;
+}
+
+.nav-link:hover,
+.nav-link.router-link-active {
+  color: var(--color-gold-light);
+}
+
+/* ---------- Hero (portada) ---------- */
+
+.hero {
+  background: linear-gradient(180deg, var(--color-navy) 0%, var(--color-navy-soft) 100%);
+  color: #fff;
+  padding: 3rem 0 2.5rem;
+}
+
+.hero h1 {
+  color: #fff;
+  font-size: 2.4rem;
+  margin: 0 0 0.75rem;
+}
+
+.hero-lead {
+  max-width: 640px;
+  color: #dcd7c4;
+  font-size: 1.05rem;
+}
+
+.hero-search {
+  display: flex;
+  gap: 0.5rem;
+  max-width: 560px;
+  margin: 1.5rem 0;
+}
+
+.hero-search input {
+  flex: 1;
+}
+
+.stats-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-num {
+  font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--color-gold-light);
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: #cfc9b6;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* ---------- Secciones y títulos ---------- */
+
+.section-title {
+  margin-top: 2.5rem;
+}
+
+.section-lead {
+  color: var(--color-ink-soft);
+  max-width: 720px;
+}
+
+.prose-section {
+  padding: 2rem 1.25rem 3rem;
+  max-width: 760px;
+}
+
+.prose-section h2 {
+  margin-top: 2rem;
+}
+
+.prose-section code {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+/* ---------- Tarjetas de navegación (portada) ---------- */
+
+.nav-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  margin: 1.5rem 0 3rem;
+}
+
+.nav-card {
+  display: block;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  text-decoration: none;
+  color: var(--color-ink);
+  transition: border-color 0.15s, transform 0.15s;
+}
+
+.nav-card:hover {
+  border-color: var(--color-gold);
+  transform: translateY(-2px);
+}
+
+.nav-card-icon {
+  width: 1.7rem;
+  height: 1.7rem;
+  color: var(--color-gold);
+}
+
+.nav-card h3 {
+  margin: 0.5rem 0 0.35rem;
+}
+
+.nav-card p {
+  margin: 0;
+  color: var(--color-ink-soft);
+  font-size: 0.92rem;
+}
+
+/* ---------- Grillas de categoría / década ---------- */
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+  margin: 1.5rem 0 3rem;
+}
+
+.category-card {
+  display: block;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  text-decoration: none;
+  color: var(--color-ink);
+}
+
+.category-card:hover {
+  border-color: var(--color-gold);
+}
+
+.category-card h2 {
+  font-size: 1.15rem;
+  margin: 0.6rem 0 0.4rem;
+}
+
+.category-card p {
+  margin: 0 0 0.5rem;
+  color: var(--color-ink-soft);
+  font-size: 0.92rem;
+}
+
+.category-meta {
+  font-size: 0.82rem !important;
+  color: var(--color-gold) !important;
+  font-weight: bold;
+}
+
+.decade-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0 3rem;
+}
+
+.decade-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  text-decoration: none;
+  color: var(--color-ink);
+}
+
+.decade-card:hover {
+  border-color: var(--color-gold);
+}
+
+.decade-label {
+  font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
+  font-weight: bold;
+  font-size: 1.15rem;
+  color: var(--color-navy);
+}
+
+.decade-count {
+  font-size: 0.85rem;
+  color: var(--color-ink-soft);
+}
+
+/* ---------- Insignias de categoría/división ---------- */
+
+.badge {
+  display: inline-block;
+  font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
+  font-size: 0.72rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  background: var(--color-gold-light);
+  color: #4a3711;
+  white-space: nowrap;
+}
+
+.badge[data-division='Teatro'] {
+  background: #e7c9c9;
+  color: var(--color-teatro);
+}
+
+/* ---------- Migas de pan ---------- */
+
+.breadcrumbs {
+  margin: 1.5rem 0 0.5rem;
+  font-size: 0.85rem;
+  color: var(--color-ink-soft);
+}
+
+.breadcrumbs a {
+  text-decoration: none;
+}
+
+.breadcrumbs span {
+  margin: 0 0.3rem;
+}
+
+/* ---------- Barra de filtros ---------- */
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1.25rem 0 0.5rem;
+}
+
+.filter-bar input {
+  flex: 1;
+  min-width: 220px;
+}
+
+input[type='search'],
+input[type='text'],
+select {
+  font: inherit;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  background: var(--color-surface);
+  color: var(--color-ink);
+}
+
+button,
+.hero-search button {
+  font: inherit;
+  font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
+  background: var(--color-gold);
+  color: #2a1e00;
+  border: none;
+  border-radius: 6px;
+  padding: 0.55rem 1.1rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background: var(--color-gold-light);
+}
+
+.results-count {
+  color: var(--color-ink-soft);
+  font-size: 0.88rem;
+  margin: 0.75rem 0;
+}
+
+.empty-state {
+  color: var(--color-ink-soft);
+  font-style: italic;
+  padding: 1.5rem 0;
+}
+
+/* ---------- Listado de premios ---------- */
+
+.prize-list {
+  list-style: none;
+  margin: 0.5rem 0 1.5rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.prize-item-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  color: var(--color-ink);
+}
+
+.prize-item-link:hover {
+  border-color: var(--color-gold);
+}
+
+.prize-year {
+  font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
+  font-weight: bold;
+  color: var(--color-navy);
+  min-width: 3.2rem;
+}
+
+.prize-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.prize-obra {
+  color: var(--color-ink);
+}
+
+.prize-autor {
+  font-size: 0.86rem;
+  color: var(--color-ink-soft);
+}
+
+/* ---------- Paginación ---------- */
+
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+  margin: 1.5rem 0 3rem;
+}
+
+.page-btn {
+  background: var(--color-surface);
+  color: var(--color-navy);
+  border: 1px solid var(--color-border);
+  font-weight: normal;
+  padding: 0.4rem 0.75rem;
+}
+
+.page-btn:hover:not(:disabled) {
+  border-color: var(--color-gold);
+}
+
+.page-btn.active {
+  background: var(--color-navy);
+  color: #fff;
+  border-color: var(--color-navy);
+}
+
+.page-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.page-ellipsis {
+  color: var(--color-ink-soft);
+  padding: 0 0.25rem;
+}
+
+/* ---------- Detalle de un premio ---------- */
+
+.prize-detail {
+  padding-bottom: 3rem;
+}
+
+.prize-detail h1 {
+  margin: 0.5rem 0 0.25rem;
+  font-size: 2rem;
+}
+
+.prize-detail-autor {
+  font-size: 1.1rem;
+  color: var(--color-ink-soft);
+  margin: 0 0 1.5rem;
+}
+
+.prize-detail-meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  margin: 0 0 2rem;
+}
+
+.prize-detail-meta dt {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-ink-soft);
+  margin-bottom: 0.2rem;
+}
+
+.prize-detail-meta dd {
+  margin: 0;
+  font-weight: bold;
+  color: var(--color-navy);
+}
+
+.prize-detail-meta dd a {
+  text-decoration: none;
+}
+
+.prize-prevnext {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.prevnext-link {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  text-decoration: none;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 0.75rem 1rem;
+  color: var(--color-ink);
+}
+
+.prevnext-link:hover {
+  border-color: var(--color-gold);
+}
+
+.prevnext-link-right {
+  text-align: right;
+  align-items: flex-end;
+}
+
+.prevnext-placeholder {
+  flex: 1;
+}
+
+.prevnext-dir {
+  font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
+  font-weight: bold;
+  color: var(--color-navy);
+  font-size: 0.85rem;
+}
+
+.prevnext-title {
+  font-size: 0.85rem;
+  color: var(--color-ink-soft);
+}
+
+.related-section h2 {
+  font-size: 1.2rem;
+}
+
+.see-all-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 0.92rem;
+  text-decoration: none;
+}
+
+/* ---------- Pie de página ---------- */
+
+.site-footer {
+  background: var(--color-navy);
+  color: #cfc9b6;
+  margin-top: 2rem;
+}
+
+.site-footer-inner {
+  padding: 1.5rem 1.25rem;
+  font-size: 0.85rem;
+}
+
+.site-footer a {
+  color: var(--color-gold-light);
+}
+
+.footer-muted {
+  opacity: 0.7;
+  margin-bottom: 0;
+}
+
+/* ---------- Error ---------- */
+
+.error-section {
+  padding: 3rem 1.25rem;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 1.9rem;
+  }
+
+  .hero-search {
+    flex-direction: column;
+  }
+
+  .prize-item-link {
+    flex-wrap: wrap;
+  }
+}
